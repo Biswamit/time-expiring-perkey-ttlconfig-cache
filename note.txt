@@ -1,0 +1,7 @@
+mvn archetype:generate -DgroupId=com.biswamit -DartifactId=time-expiring-perkey-ttlconfig-cache -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+
+mvn -N wrapper:wrapper -Dmaven=3.6.3
+mvn spring-boot:run
+
+
+mvn clean package

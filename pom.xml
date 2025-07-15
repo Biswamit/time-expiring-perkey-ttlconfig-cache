@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.biswamit.cache</groupId>
+  <artifactId>time-expiring-perkey-ttlconfig-cache</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>time-expiring-perkey-ttlconfig-cache</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+  <description>Demo project for Time-Expiring Cache with Hierarchical TTL</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>17</java.version>
+    <maven.compiler.release>17</maven.compiler.release>
+    <spring.version>3.3.11</spring.version>
+    <!-- Explicitly define the Caffeine version for clarity -->
+    <caffeine.version>3.1.8</caffeine.version>
+  </properties>
+
+  <dependencies>
+    <!-- Core Spring Boot Starter for auto-configuration and basic functionalities -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- Caffeine Cache Dependency -->
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+      <version>${caffeine.version}</version>
+    </dependency>
+
+    <!-- For enabling @ConfigurationProperties -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <version>${spring.version}</version>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- For testing purposes (recommended) -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <!-- This plugin compiles the Java source code -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <!-- Version is managed by spring-boot-starter-parent -->
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+        <!-- This plugin packages the application into a runnable "fat JAR" -->
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <!-- Version is managed by spring-boot-starter-parent -->
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
