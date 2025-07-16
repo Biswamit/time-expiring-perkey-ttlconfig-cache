@@ -24,24 +24,24 @@ Group-Level TTL (Medium Priority): A default TTL for all entries belonging to a 
 Global Default TTL (Lowest Priority): A fallback TTL for any entry that does not have a specific or group-level configuration.
 
 Example application.properties
-# 1. Global Default TTL (lowest priority)
-# Fallback for any key that doesn't match a more specific rule.
+### 1. Global Default TTL (lowest priority)
+### Fallback for any key that doesn't match a more specific rule.
 app.cache.ttl.default=15m
 
-# 2. Group/Main Key TTLs (medium priority)
-# Default TTL for all entries belonging to a "group".
-# Note: Use bracket notation for keys with dots to avoid issues with Spring parsing.
+### 2. Group/Main Key TTLs (medium priority)
+### Default TTL for all entries belonging to a "group".
+### Note: Use bracket notation for keys with dots to avoid issues with Spring parsing.
 app.cache.ttl.keys[matrix.event.setting]=10m
 app.cache.ttl.keys[odyssey.tenant.mapper]=12m
 app.cache.ttl.keys[tracing]=5m
 
 
-# 3. Specific Sub-Key TTLs (highest priority)
-# A specific TTL for a tenant within the "matrix.event.setting" group.
+### 3. Specific Sub-Key TTLs (highest priority)
+### A specific TTL for a tenant within the "matrix.event.setting" group.
 app.cache.ttl.keys[matrix.event.setting.cbec5243-e668-467e-8b67-d236510181b1]=5m
-# A specific TTL for a tenant within the "odyssey.tenant.mapper" group.
+### A specific TTL for a tenant within the "odyssey.tenant.mapper" group.
 app.cache.ttl.keys[odyssey.tenant.mapper.cbec5243-e668-467e-8b67-d236510181b1]=10m
-# A specific TTL for the "matrix.otel" flag within the "tracing" group.
+### A specific TTL for the "matrix.otel" flag within the "tracing" group.
 app.cache.ttl.keys[tracing.matrix.otel]=3m
 
 How It Works
